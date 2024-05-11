@@ -1,4 +1,4 @@
-package day_6_api_runner_bdd_intro;
+package batch_5_git;
 
 import com.github.javafaker.Faker;
 import org.junit.FixMethodOrder;
@@ -8,13 +8,16 @@ import pojo.RequestBody;
 import utilities.APIRunner;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class ApiChainingWithAPIRunner {
+public class MyTemporaryClass {
+
+
+
     Faker faker = new Faker();
     static String bankID="";
 
     @Test
     public void test_1_createNewBankAccount(){
-    // https://backend.cashwise.us /api/myaccount/bankaccount
+        // https://backend.cashwise.us /api/myaccount/bankaccount
         String path = "/api/myaccount/bankaccount";
 
         RequestBody requestBody = new RequestBody();
@@ -51,8 +54,6 @@ public class ApiChainingWithAPIRunner {
 
     }
 
-// Hello I added from differenet account
-
     @Test
     public void test_4_deleteBankAccount(){
         String path = "/api/myaccount/bankaccount/"+bankID;
@@ -70,7 +71,12 @@ public class ApiChainingWithAPIRunner {
 
     }
 
+    @Test
+    public void test_6_deleteAccount(){
+        String path = "/api/myaccount/bankaccount/"+bankID;
+        APIRunner.runDELETE(path);
 
 
+    }
 
 }
