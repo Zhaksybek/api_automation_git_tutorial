@@ -72,7 +72,13 @@ public class MyTemporaryClass {
     }
 
 
-    // public static void main(String[] args) {
-    //     System.out.println("Hello , I;ve added this line");
-    // }
+
+    @Test
+    public void test_1_deleteAccount(){
+        String path = "/api/myaccount/bankaccount/"+bankID;
+        APIRunner.runDELETE(path);
+
+
+    }
+
 }
